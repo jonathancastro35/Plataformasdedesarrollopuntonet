@@ -1,0 +1,101 @@
+<div class="container wrapper">
+    <div class="row">
+        <!-- Issue table -->
+        <div class="col-md-12">
+            <div class="inner">
+              
+                <h3>Listado de proyecto</h3>
+
+                <tr>
+                    <td>
+                        <button type="button" class="btn btn btn-warning btn-sm move-right" [routerLink]="['/createusuariolista']">Crear proyecto</button>
+                    </td>
+                    
+                    <td>
+                        <button type="button" class="btn btn-success btn-sm move-right" [routerLink]="['/createempleado']">Crear empleado</button>
+                    </td>
+
+                    <td>
+                        <button type="button" class="btn btn-success btn-sm move-right" [routerLink]="['/listarempleados']">Listar empleados</button>
+                    </td>
+                    
+                    <td>
+                        <button type="button" class="btn btn-success btn-sm move-right" [routerLink]="['/createproyectoempleado']">Insertar empleado a proyecto</button>
+                    </td>
+                    
+                    <td>
+                        <button type="button" class="btn btn-success btn-sm move-right" [routerLink]="['/listarempleadosproyectos']">Conocer empleados en proyecto</button>
+                    </td>
+
+                    <td>
+                        <button type="button" class="btn btn-success btn-sm move-right" [routerLink]="['/createjefe']">Crear jefe</button>
+                    </td>
+
+                    <td>
+                        <button type="button" class="btn btn-success btn-sm move-right" [routerLink]="['/listarjefes']">Listar jefes</button>
+                    </td>
+
+                    <td>
+                        <button type="button" class="btn btn btn-warning btn-sm move-right" [routerLink]="['/listartareas']">Listar tareas</button>
+                    </td>
+                    
+                    <td>
+                        <button type="button" class="btn btn btn-warning btn-sm move-right" [routerLink]="['/createtarea']">Crear tarea</button>
+                    </td>
+
+                    <td>
+                        <button type="button" class="btn btn btn-warning btn-sm move-right" [routerLink]="['/consultartareasempleadoconfecha']">Consultar tareas usuario fecha</button>
+                    </td>
+
+                    
+
+                    
+
+                </tr>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>	
+                            
+
+                            <th scope="col">Id</th>
+                            <th scope="col">Nombre del proyecto</th>
+                            <th scope="col">Descripciòn</th>
+                            <th scope="col">Acciòn</th>
+                            
+                          
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let p of Listarproyectos">
+                            
+                            <td>{{p.id}}</td>
+                            <td>{{p.nombreproyecto}}</td>
+                            <td>{{p.descripcionproyecto}}</td>
+
+                            <td>
+
+                                <button type="button" class="btn btn-danger btn-sm" (click)="deleteproyecto(p.id)">Remove</button>
+                                <button type="button" class="btn btn-success btn-sm move-right" [routerLink]="['/editarproyecto/', p.id]">Editar proyecto</button>
+       
+                              
+                
+                            </td>
+                           
+
+                          
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+

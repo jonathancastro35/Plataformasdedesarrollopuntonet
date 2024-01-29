@@ -1,0 +1,42 @@
+
+<div class="container wrapper wrapper2">
+    <div class="row">
+        <!-- Form -->
+        <div class="col-md-12">
+
+            <tr>
+                <td>
+                    <button type="button" class="btn btn-success btn-sm move-right" [routerLink]="['/listarproyectos']">Ir a inicio</button>
+                </td>
+            </tr>
+
+            <h3>Registro de proyecto empleado</h3>
+            <form [formGroup]="proyectoempForm " (ngSubmit)="submitForm()" novalidate>
+
+                <div class="form-group">
+                    <label class="form-label">Id empleado</label>
+                    <select type="number" formControlName="Idempleado">
+                        <option [value]="p.id" *ngFor="let p of Listadoempleados">{{p.id}}-{{p.usuario}}-{{p.nombre}}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Id proyecto</label>
+                    <select type="number" formControlName="Idproyecto">
+                        <option [value]="p.id" *ngFor="let p of Listadoproyecto">{{p.id}}-{{p.nombreproyecto}}</option>
+                    </select>
+                </div>
+               
+                <button type="submit" class="btn btn-primary">Registrar proyecto empleado</button>
+            </form>
+            
+          
+
+        </div>
+    </div>
+</div>
+
+
+
+
+

@@ -1,0 +1,61 @@
+<div class="container wrapper">
+    <div class="row">
+        <!-- Issue table -->
+        <div class="col-md-12">
+            <div class="inner">
+              
+                <h3>Listado de empleado</h3>
+
+               
+
+                
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>	
+                        
+                            <th scope="col">Id</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellidos</th>
+                            <th scope="col">Usuario</th>
+                            <th scope="col">Pass</th>
+                            <th scope="col">Acciòn</th>
+                             
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let p of Listarempleados">
+                            
+                            <td>{{p.id}}</td>
+                            <td>{{p.nombre}}</td>
+                            <td>{{p.apellidos}}</td>
+                            <td>{{p.usuario}}</td>
+                            <td>{{p.pass}}</td>
+
+                            <td>
+
+                                <button type="button" class="btn btn-danger btn-sm" (click)="deleteempleado(p.id)">Remove</button>
+                                <button type="button" class="btn btn-success btn-sm move-right" [routerLink]="['/editarempleado/', p.id]">Editar empleado</button>
+       
+                              
+                
+                            </td>
+                           
+
+                          
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,58 @@
+<div class="container wrapper">
+    <div class="row">
+        <!-- Issue table -->
+        <div class="col-md-12">
+            <div class="inner">
+              
+                <h3>Listado de proyectos empleados</h3>
+
+                <tr>
+                    <td>
+                        <button type="button" class="btn btn-success btn-sm move-right" [routerLink]="['/listarproyectos']">Volver a inicio</button>
+                    </td>
+                    
+                </tr>
+                <table class="table table-bordered">
+                    <thead>
+                        
+                        <tr>	
+                            
+                            <th scope="col">Id</th>
+                            <th scope="col">Id empleado</th>
+                            <th scope="col">Id proyecto</th>
+                            <th scope="col">Acciòn</th>     
+                          
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let p of Listarproyectosempleado">
+                            
+                            <td>{{p.id}}</td>
+                            <td>{{p.idempleado}}</td>
+                            <td>{{p.idproyecto}}</td>
+
+                            <td>
+
+                                <button type="button" class="btn btn-danger btn-sm" (click)="deleteproyectoempleado(p.id)">Remove</button>
+                                
+                
+                            </td>
+                           
+
+                          
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+

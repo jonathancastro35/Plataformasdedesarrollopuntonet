@@ -1,0 +1,56 @@
+
+<div class="container wrapper wrapper2">
+    <div class="row">
+        <!-- Form -->
+        <div class="col-md-12">
+
+           
+
+            <h3>Registro de tareas</h3>
+            <form [formGroup]="tareaForm" (ngSubmit)="submitForm()" novalidate>
+
+                <div class="form-group">
+                    <label class="form-label">Escojer el proyecto empleado Orden(Id->proyecto Id-Empleado)</label>
+                    <select type="number" formControlName="Idproyectoempleado">
+                        <option [value]="p.id" *ngFor="let p of Listadoproyectoempleado">{{p.idproyecto}}--{{p.idempleado}}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Fecha</label>
+                    <input type="date" formControlName="Fechatarea" class="form-control">
+                </div>
+                
+                <div class="form-group">
+                    <label>Nombre de la tarea</label>
+                    <input type="text" formControlName="Nombretarea" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Tiempo para dedicar en horas</label>
+                    <select type="number" formControlName="Tiempodedicadotarea">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        
+                    </select>
+                </div>
+
+               
+                <button type="submit" class="btn btn-primary">Registrar tarea</button>
+            </form>
+            
+        </div>
+    </div>
+</div>
+
+
+
+
+
+

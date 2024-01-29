@@ -1,0 +1,48 @@
+<div class="container wrapper">
+    <div class="row">
+        <!-- Issue table -->
+        <div class="col-md-12">
+            <div class="inner">
+              
+                <h3>Listado de jefes</h3>
+
+                
+
+                
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>	
+                        
+                            <th scope="col">Id</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellidos</th>
+                            <th scope="col">Usuario</th>
+                             
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let p of Listarjefes">
+                            
+                            <td>{{p.id}}</td>
+                            <td>{{p.nombre}}</td>
+                            <td>{{p.apellidos}}</td>
+                            <td>{{p.usuario}}</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+

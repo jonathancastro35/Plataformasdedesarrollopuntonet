@@ -1,0 +1,72 @@
+<div class="container wrapper wrapper2">
+    <div class="row">
+        <!-- Form -->
+        <div class="col-md-12">
+            
+
+            <h3>Login consulta tareas empleado en proyectos </h3>
+            <form [formGroup]="usuariologinconsultaForm" (ngSubmit)="listado()" novalidate>
+                <div class="form-group">
+
+                    <div class="form-group">
+                        <label>Usuario</label>
+                        <input type="text" formControlName="Usuario" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" formControlName="Pass" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Fecha</label>
+                        <input type="date" formControlName="Fechatarea" class="form-control">
+                    </div>
+
+                   
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+
+            
+            <h4>Listado de tareas en proyectos por fecha</h4>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>	
+
+                            <th scope="col">Nombre del proyecto</th>
+                            <th scope="col">Horas trabajadas</th>
+                            <th scope="col">Horas totales</th>
+                            <th scope="col">Id empleado</th>
+                            <th scope="col">Fecha consultada</th>
+                          
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let p of Listado">
+                            
+                            <td>{{p.nombreproyecto}}</td>
+                            <td>{{p.horastrabajadasenproyecto}}</td>
+                            <td>{{p.horastotales}}</td>
+                            <td>{{p.idempleado}}</td>
+                            <td>{{p.fechatarea}}</td>
+                           
+                        </tr>
+                    </tbody>
+                </table>
+             
+            
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+

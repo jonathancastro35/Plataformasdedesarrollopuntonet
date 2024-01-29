@@ -1,0 +1,68 @@
+<div class="container wrapper">
+    <div class="row">
+        <!-- Issue table -->
+        <div class="col-md-12">
+            <div class="inner">
+              
+                <h3>Listado de tareas</h3>
+
+                <tr>
+                    <td>
+                        <button type="button" class="btn btn-success btn-sm move-right" [routerLink]="['/listarproyectos']">Volver a inicio</button>
+                    </td>
+                    
+                </tr>
+                <table class="table table-bordered">
+                    <thead>
+
+                        <tr>	
+                            <th scope="col">Id</th>
+                            <th scope="col">Id proyecto empleado</th>
+                            <th scope="col">Fecha de la tarea</th>
+                            <th scope="col">Hora de entrada</th>
+                            <th scope="col">Hora de salida</th>
+                            <th scope="col">Nombre de la tarea</th>
+                            <th scope="col">Tiempo dedicado</th>
+
+                            <th scope="col">Acciòn</th>     
+                          
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let p of Listartareas">
+                            
+                            <td>{{p.id}}</td>
+                            <td>{{p.idproyectoempleado}}</td>
+                            <td>{{p.fechatarea}}</td>
+                            <td>{{p.horaentrada}}</td>
+                            <td>{{p.horasalida}}</td>
+                            <td>{{p.nombretarea}}</td>
+                            <td>{{p.tiempodedicadotarea}}</td>
+                            
+
+                            <td>
+
+                                <button type="button" class="btn btn-danger btn-sm" (click)="deletetarea(p.id)">Remove</button>
+                                <button type="button" class="btn btn-success btn-sm move-right" [routerLink]="['/editartarea/', p.id]">Editar tarea</button>
+                
+                            </td>
+                           
+
+                          
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+

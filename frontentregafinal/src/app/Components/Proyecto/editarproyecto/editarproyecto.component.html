@@ -1,0 +1,25 @@
+<div class="container">
+    <legend>Editar proyecto</legend>
+    <form>
+
+        <div class="mb-3">
+            <label class="form-label">Nombre del proyecto</label>
+            <input type="text" name="Nombreproyecto" id="textName" class="form-control" [(ngModel)]="proyecto.Nombreproyecto">
+        </div>
+        
+        <div class="mb-3">
+            <label class="form-label">Descripciòn del proyecto</label>
+            <input type="text" name="Descripcionproyecto" id="textName" class="form-control" [(ngModel)]="proyecto.Descripcionproyecto">
+        </div>
+        
+       
+        <button type="button" (click)="update()" class="btn btn-primary">Update</button>
+        <a class="btn btn-primary" [routerLink]="['/listarproyectos']">Cancel</a>
+    </form>
+</div>
+
+
+
+
+
+

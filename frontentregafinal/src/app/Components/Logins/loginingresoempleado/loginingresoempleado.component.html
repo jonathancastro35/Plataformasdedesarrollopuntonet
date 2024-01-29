@@ -1,0 +1,77 @@
+<div class="container wrapper wrapper2">
+    <div class="row">
+        <!-- Form -->
+        <div class="col-md-12">
+
+            <h3>Login Empleado</h3>
+            <form [formGroup]="ingresoempleadoForm" (ngSubmit)="listado()" novalidate>
+                <div class="form-group">
+
+                    <div class="form-group">
+                        <label>Usuario</label>
+                        <input type="text" formControlName="Usuario" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" formControlName="Pass" class="form-control">
+                    </div>
+
+                   
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            
+            <h4>Listado de tareas registradas</h4>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>	
+                            
+
+                            <th scope="col">Id tarea</th>
+                            <th scope="col">Fecha tarea</th>
+                            <th scope="col">Nombre de la tarea</th>
+                            <th scope="col">Tiempo dedicado</th>
+                            <th scope="col">Crear tarea</th>
+                            <th scope="col">Buscar tareas en proyecto por fecha</th>
+                           
+                          
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let p of Listado">
+                            
+                            <td>{{p.id}}</td>
+                            <td>{{p.fechatarea}}</td>
+                            <td>{{p.nombretarea}}</td>
+                            <td>{{p.tiempodedicadotarea}}</td>
+
+                            <td>
+                                <button type="button" class="btn btn btn-warning btn-sm move-right" [routerLink]="['/createtarea']">Crear tarea</button>
+                               
+                            </td>
+
+                            
+                            <td>
+                                <button type="button" class="btn btn btn-warning btn-sm move-right" [routerLink]="['/consultartareasempleadoconfecha']">Consultar</button>
+                               
+                            </td>
+                           
+                        </tr>
+                    </tbody>
+                </table>
+             
+            
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
